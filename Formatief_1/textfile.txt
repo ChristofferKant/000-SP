@@ -1,0 +1,6 @@
+Dit is een tekstbestand.
+Dit bestand bevat spaties   tabjes
+
+en lege regels
+
+        Einde.

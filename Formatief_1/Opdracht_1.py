@@ -16,12 +16,6 @@ for n in range(1, n + 1):
 for m in range(m - 1, 0, -1):
 	print("{:>10}".format("*"*m))
 
-"""Test"""
-# for n in range(1, n + 1):
-# 	print("*" * n)
-# 	for m in range(m - 1 , 0, -1):
-# 		print("*" * m)
-
 """Versie 1 met 2 while loops"""
 n = int(input("Hoe groot? "))
 m = 0
