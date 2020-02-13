@@ -39,10 +39,16 @@ You can choose from """, colors)
 
 
 def ai_codemaker():
-	print("""At what difficulty would you like to play?
-You can choose between simple, normal or expert. (S/N/E)""")
-	difficulty = str(input("Enter your choice here: "))
-
+	while True:
+		print("""At what difficulty would you like to play?
+You can choose between simple, normal or expert. (S/N/E)
+Simple means you have 10 turns to guess the code.
+Normal means you have 8 turns to guess the code.
+Expert means you have 6 turns to guess the code.""")
+		difficulty = str(input("Enter your choice here: "))
+		if difficulty == "S" or "N" or "E":
+			break
+		print("Please enter \"S\", \"N\" or \"E\"")
 	pass
 
 
