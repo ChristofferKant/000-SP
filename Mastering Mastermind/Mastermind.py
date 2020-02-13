@@ -1,7 +1,5 @@
 import random
-
 colors = ["[R]ed", "[G]reen", "[B]lue", "[Y]ellow", "[P]urple", "[W]hite"]
-
 
 def main_menu():
 	print("""Welcome to Mastermind.
@@ -37,6 +35,7 @@ You can choose from """, colors)
 	color_3 = str(input("Color 3 is: "))
 	color_4 = str(input("Color 4 is: "))
 
+	possible_combinations = []
 
 def ai_codemaker():
 	while True:
