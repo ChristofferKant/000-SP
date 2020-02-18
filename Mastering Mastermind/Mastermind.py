@@ -13,22 +13,18 @@ Normal means an average algorithm will try to figure out your code or you will h
 Expert means an advanced algorithm will (always) figure out your code or you will have 6 turns to guess the code
 Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 
-	while True:			# Slaat de moeilijkheidsgraad op
+	while (difficulty not in difficulty_options):#maak gebruik van de if statement in de whileloop	# Slaat de moeilijkheidsgraad op
 		difficulty = str(input("Enter your choice here: "))
-		if difficulty in difficulty_options:
-			break
 		print("Please enter \"S\", \"N\" or \"E\"")
 
 	print("Who will be entering the code? (ME/AI)")
-
-	while True:			# Slaat op wie de code gaat maken
+	code_maker = ''
+	while (code_maker != "ME") or (code_maker != "AI"):#maak gebruik van de if statement in een while loop	# Slaat op wie de code gaat maken
 		code_maker = str(input("Enter your choice here: "))
 		if code_maker == "ME":
 			player_codemaker(difficulty)
-			break
 		elif code_maker == "AI":
 			ai_codemaker(difficulty)
-			break
 		print("Please enter \"ME\" or \"AI\"")
 
 
@@ -50,15 +46,13 @@ def ai_codemaker(difficulty):
 		max_turns = 9
 	elif difficulty == "E":
 		max_turns = 7
-	turn = 1
-	while turn < max_turns:
-		print("Turn", turn)
+	for turn in max_turns:		#Je kan hier beter een forloop gebruiken dan oef je geen counter te gebruiken zel	
+		print("Turn", turn+1)	# Je kan hier denk ik ook beter een aparte functie van maken die dan om vier input nummer vraagt					
 		number_1 = int(input("Number 1 is: "))
 		number_2 = int(input("Number 2 is: "))
 		number_3 = int(input("Number 3 is: "))
 		number_4 = str(input("Number 4 is: "))
 		check(number_1, number_2, number_3, number_4)
-		turn += 1
 		print(secret)
 	print("The secret code is: ", secret)
 
