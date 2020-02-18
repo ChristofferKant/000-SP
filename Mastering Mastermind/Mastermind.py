@@ -1,24 +1,19 @@
 import random
-# colors_examples = ["[R]ed", "[G]reen", "[B]lue", "[Y]ellow", "[P]urple", "[W]hite"]
-# colors = ["R", "G", "B", "Y", "P", "W"]
 numbers_examples = [0, 1, 2, 3, 4, 5]
-numbers = [(i, j, k, l) for i in range(0, 6) for j in range(0, 6) for k in range(0, 6) for l in range(0, 6)]
+numbers = [(i, j, k, l) for i in range(0, 6) for j in range(0, 6) for k in range(0, 6) for l in range(0, 6)] # Lijst met alle mogelijkheden
 difficulty_options = ["S", "N", "E"]
-secret = random.choice(numbers)
-
-#def get_secret():
-#	return random.choice(numbers)
+secret = random.choice(numbers)		# Secret code voor AI
 
 
 def main_menu():
-	print("""Welcome to Mastermind.
-At what difficulty would you like to play?
+	print("""Welcome to Mastermind.				# Intro text
+At what difficulty would you like to play?		
 Simple means a simple algorithm will try to figure out your code or you will have 10 turns to guess the code.
 Normal means an average algorithm will try to figure out your code or you will have 8 turn to guess the code.
 Expert means an advanced algorithm will (always) figure out your code or you will have 6 turns to guess the code
 Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 
-	while True:
+	while True:			# Slaat de moeilijkheidsgraad op
 		difficulty = str(input("Enter your choice here: "))
 		if difficulty in difficulty_options:
 			break
@@ -26,7 +21,7 @@ Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 
 	print("Who will be entering the code? (ME/AI)")
 
-	while True:
+	while True:			# Slaat op wie de code gaat maken
 		code_maker = str(input("Enter your choice here: "))
 		if code_maker == "ME":
 			player_codemaker(difficulty)
@@ -44,7 +39,7 @@ def player_codemaker(difficulty):
 	number_2 = int(input("Number 2 is: "))
 	number_3 = int(input("Number 3 is: "))
 	number_4 = str(input("Number 4 is: "))
-	pass
+	pass									# Hier komen de algoritmes
 
 
 def ai_codemaker(difficulty):
@@ -86,7 +81,7 @@ def check(a, b, c, d):
 			secret_copy.remove(guess[i])
 		i += 1
 	print("{} black peg(s),{} white peg(s)".format(black_pegs, white_pegs))
-	return black_pegs, white_pegs
+	return black_pegs, white_pegs 			# Foutief, geeft maximaal 3 black pegs terug ipv 4
 
 
-ai_codemaker("S")
+main_menu()
