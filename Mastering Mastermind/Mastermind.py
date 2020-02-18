@@ -21,7 +21,7 @@ Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 	while True:
 		difficulty = str(input("Enter your choice here: "))
 		if difficulty in difficulty_options:
-			continue
+			break
 		print("Please enter \"S\", \"N\" or \"E\"")
 
 	print("Who will be entering the code? (ME/AI)")
@@ -37,7 +37,39 @@ Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 		print("Please enter \"ME\" or \"AI\"")
 
 
-def check(guess):
+
+def player_codemaker(difficulty):
+	print("Choose 4 numbers. You can choose from", numbers_examples)
+	number_1 = int(input("Number 1 is: "))
+	number_2 = int(input("Number 2 is: "))
+	number_3 = int(input("Number 3 is: "))
+	number_4 = str(input("Number 4 is: "))
+	pass
+
+
+def ai_codemaker(difficulty):
+	print("""The AI set the code""")
+	if difficulty == "S":
+		max_turns = 11
+	elif difficulty == "N":
+		max_turns = 9
+	elif difficulty == "E":
+		max_turns = 7
+	turn = 1
+	while turn < max_turns:
+		print("Turn", turn)
+		number_1 = int(input("Number 1 is: "))
+		number_2 = int(input("Number 2 is: "))
+		number_3 = int(input("Number 3 is: "))
+		number_4 = str(input("Number 4 is: "))
+		check(number_1, number_2, number_3, number_4)
+		turn += 1
+		print(secret)
+	print("The secret code is: ", secret)
+
+
+def check(a, b, c, d):
+	guess = (a, b, c, d)
 	black_pegs = 0
 	white_pegs = 0
 	secret_copy = list(secret)
@@ -57,34 +89,4 @@ def check(guess):
 	return black_pegs, white_pegs
 
 
-def player_codemaker(difficulty):
-	print("Choose 4 numbers. You can choose from", numbers_examples)
-	number_1 = int(input("Number 1 is: "))
-	number_2 = int(input("Number 2 is: "))
-	number_3 = int(input("Number 3 is: "))
-	number_4 = str(input("Number 4 is: "))
-
-
-def ai_codemaker(difficulty):
-	print("""The AI set the code""")
-	if difficulty == "S":
-		max_turns = 11
-	elif difficulty == "N":
-		max_turns = 9
-	elif difficulty == "E":
-		max_turns = 7
-	turn = 1
-	while turn < max_turns:
-		print("Turn", turn)
-		number_1 = int(input("Number 1 is: "))
-		number_2 = int(input("Number 2 is: "))
-		number_3 = int(input("Number 3 is: "))
-		number_4 = str(input("Number 4 is: "))
-		guess = [number_1, number_2, number_3, number_4]
-		check(guess)
-		turn += 1
-		print(secret)
-	print("The secret code is: ", secret)
-
-
-main_menu()
+ai_codemaker("S")
