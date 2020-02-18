@@ -4,7 +4,6 @@ numbers = [(i, j, k, l) for i in range(0, 6) for j in range(0, 6) for k in range
 difficulty_options = ["S", "N", "E"]
 secret = random.choice(numbers)		# Secret code voor AI
 
-
 def main_menu():
 	print("""Welcome to Mastermind.				# Intro text
 At what difficulty would you like to play?		
@@ -34,7 +33,7 @@ def player_codemaker(difficulty):
 	number_1 = int(input("Number 1 is: "))
 	number_2 = int(input("Number 2 is: "))
 	number_3 = int(input("Number 3 is: "))
-	number_4 = str(input("Number 4 is: "))
+	number_4 = int(input("Number 4 is: "))
 	pass									# Hier komen de algoritmes
 
 
@@ -51,7 +50,7 @@ def ai_codemaker(difficulty):
 		number_1 = int(input("Number 1 is: "))
 		number_2 = int(input("Number 2 is: "))
 		number_3 = int(input("Number 3 is: "))
-		number_4 = str(input("Number 4 is: "))
+		number_4 = int(input("Number 4 is: "))
 		check(number_1, number_2, number_3, number_4)
 		print(secret)
 	print("The secret code is: ", secret)
@@ -75,7 +74,4 @@ def check(a, b, c, d):
 			secret_copy.remove(guess[i])
 		i += 1
 	print("{} black peg(s),{} white peg(s)".format(black_pegs, white_pegs))
-	return black_pegs, white_pegs 			# Foutief, geeft maximaal 3 black pegs terug ipv 4
-
-
-main_menu()
+	return black_pegs, white_pegs
