@@ -12,10 +12,10 @@ Normal means an average algorithm will try to figure out your code or you will h
 Expert means an advanced algorithm will (always) figure out your code or you will have 6 turns to guess the code
 Please enter \"S\" for simple, \"N\" for normal or \"E\" for expert)""")
 
-	while (difficulty not in difficulty_options):#maak gebruik van de if statement in de whileloop	# Slaat de moeilijkheidsgraad op
-		difficulty = str(input("Enter your choice here: "))
+	difficulty = str(input("Enter your choice here: "))
+	while (difficulty not in difficulty_options):  #maak gebruik van de if statement in de whileloop	# Slaat de moeilijkheidsgraad op
 		print("Please enter \"S\", \"N\" or \"E\"")
-
+		difficulty = str(input("Enter your choice here: "))
 	print("Who will be entering the code? (ME/AI)")
 	code_maker = ''
 	while (code_maker != "ME") or (code_maker != "AI"):#maak gebruik van de if statement in een while loop	# Slaat op wie de code gaat maken
@@ -75,3 +75,5 @@ def check(a, b, c, d):
 		i += 1
 	print("{} black peg(s),{} white peg(s)".format(black_pegs, white_pegs))
 	return black_pegs, white_pegs
+
+main_menu()
