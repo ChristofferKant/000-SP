@@ -1,6 +1,6 @@
 # https://www.edureka.co/community/16988/python-exit-commands-why-so-many-and-when-should-each-be-used voor sys.exit()
 # https://stackoverflow.com/questions/1207406/how-to-remove-items-from-a-list-while-iterating voor lst[:]
-# programmeursleerling bladzijde 166 (180 in pdf) voor numbers lijst (regel 7)
+# programmeursleerling bladzijde 166 (180 in pdf) voor numbers lijst (regel 6)
 import random
 import sys
 numbers = [(i, j, k, l) for i in range(0, 6) for j in range(0, 6) for k in range(0, 6) for l in range(0, 6)] # Lijst met alle mogelijkheden
